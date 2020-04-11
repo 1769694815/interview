@@ -1,0 +1,84 @@
+<!--
+ * @Author: xwen
+ * @Date: 2020-04-03 13:50:36
+ * @LastEditTime: 2020-04-03 14:11:22
+ * @LastEditors: xwen
+ * @Description: 
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .bg {
+      padding: 0 200px;
+    }
+    .bg>div {
+      float: left;
+      height: 100px;
+      position: relative;
+    }
+    .bg .center {
+      background: green;
+      width: 100%;
+    }
+    .bg .left {
+      background: red;
+      width: 200px;
+      margin-left: -100%;
+      right: 200px;
+    }
+    .bg .right {
+      background: yellow;
+      width: 200px;
+      margin-right: -200px;
+    }
+
+    .bg2>div {
+      float: left;
+      height: 100px;
+    }
+    .bg2 .center {
+      width: 100%;
+    }
+    .bg2 .inside {
+      background: green;
+      margin: 0 200px;
+      height: 100px;
+    }
+    .bg2 .left {
+      background: red;
+      width: 200px;
+      margin-left: -100%;
+    }
+    .bg2 .right {
+      background: yellow;
+      width: 200px;
+      margin-left: -200px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 圣杯布局 -->
+  <div class="bg">
+    <div class="center"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
+  <!-- 双飞燕布局 -->
+  <section class="bg2">
+    <div class="center">
+      <div class="inside">123456</div>
+    </div>
+    <div class="left"></div>
+    <div class="right"></div>
+  </section>
+</body>
+</html>

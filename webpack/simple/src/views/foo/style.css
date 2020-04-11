@@ -1,0 +1,9 @@
+.foo__gobar {
+  width: 100px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  font-size: 28px;
+  background-color: tomato;
+  color: #fff;
+}

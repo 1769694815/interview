@@ -1,0 +1,9 @@
+.bar__gofoo {
+  width: 200px;
+  height: 160px;
+  line-height: 160px;
+  text-align: center;
+  font-size: 30px;
+  background-color: skyblue;
+  color: #fff;
+}

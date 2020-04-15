@@ -1,7 +1,7 @@
 <!--
  * @Author: xwen
  * @Date: 2020-04-15 13:43:30
- * @LastEditTime: 2020-04-15 14:35:05
+ * @LastEditTime: 2020-04-15 16:22:08
  * @LastEditors: xwen
  * @Description: 
  -->
@@ -29,3 +29,12 @@ HTTPS(HTTP的安全版，即HTTP下加入SSL/TLS层，端口号: 443)
 4、服务器解析HTTP请求并按照报文格式封装成HTTP对象，返回给浏览器
 5、数据传输完毕后，断开连接 (四次挥手)
 6、浏览器拿到响应报文进行页面解析和渲染
+
+谈谈对 webpack 的看法
+
+主要原理：将所有的资源看成一个模块，并把页面逻辑当作一个整体，通过一个或多个给定的入口文件，webpack 从这个或多个文件开始，找到所有的依赖文件，将各个依赖文件模块通过 loader 和 plugins 处理后，然后打包在一起，最后输出一个浏览器可以识别的 js 文件
+四个核心概念：Entry(入口)、Output(输出)、loader 和 Plugins(插件)
+Entry 是 webpack 的入口起点，它指示 webpack 应该从哪个模块开始着手，来作为构建内部依赖图的开始
+Output 属性告诉 webpack 在哪里输出它所创建的打包文件，也可指定打包文件的文件名称，默认位置：./dist
+loader 可以理解为 webpack 的编译器，处理一些 非 javascript 文件。在对 loader 进行配置的时候，test 属性：标识有哪些后缀的文件应该被处理，是一个正则表达式；use 属性：指定 test 类型的文件应该使用哪种 loader 进行预处理。例如：css-loader、style-loader
+plugins 可以执行范围更广的任务，包括打包、优化、压缩、搭建服务器等等，要使用一个插件，需要先 npm 包管理器进行安装，然后在配置文件中引入，最后将其实例化后传递给 plugins 数组属性

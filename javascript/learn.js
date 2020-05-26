@@ -1,7 +1,7 @@
 /*
  * @Author: xwen
  * @Date: 2020-04-17 14:02:08
- * @LastEditTime: 2020-04-17 16:24:04
+ * @LastEditTime: 2020-05-26 17:42:01
  * @LastEditors: xwen
  * @Description: 继承
  */
@@ -87,3 +87,39 @@ console.log(b.age)
 console.log(b.getJob())
 console.log(b.getName())
 console.log(b.getNameAndJob())
+
+
+
+/**
+ * @description: 函数防抖(debounce) 任务频繁触发的情况下，只有任务触发的间隔超过指定间隔的时候，任务才会执行
+ * @param {Function} fn
+ * @param {Number} interval
+ * @return: 
+ */
+function debounce(fn, interval =  300) {
+  let timeout = null
+  return function() {
+    clearTimeout(timeout)
+    timeout = setTimeout(() => {
+      fn.apply(this, arguments)
+    }, interval)
+  }
+}
+
+/**
+ * @description: 函数节流(throttle) 指定时间间隔内执行一次任务
+ * @param {Function} fn
+ * @param {Number} interval
+ * @return: 
+ */
+function throttle(fn, interval = 300) {
+  let canRun = true
+  return function() {
+    if (!canRun) return
+    canRun = false
+    setTimeout(() => {
+      fn.apply(this, arguments)
+      canRun = true
+    }, interval)
+  }
+}

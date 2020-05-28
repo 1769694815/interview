@@ -1,7 +1,7 @@
 /*
  * @Author: xwen
  * @Date: 2020-04-17 14:02:08
- * @LastEditTime: 2020-05-26 17:42:01
+ * @LastEditTime: 2020-05-27 10:39:43
  * @LastEditors: xwen
  * @Description: 继承
  */
@@ -121,5 +121,24 @@ function throttle(fn, interval = 300) {
       fn.apply(this, arguments)
       canRun = true
     }, interval)
+  }
+}
+
+/**
+ * @description: instanceof
+ * @param {type} 
+ * @return: 
+ */
+function instance_of(P, L) {
+  var O = P.prototype
+  L = L.__proto__
+  while(true) {
+    if (L === null) {
+      return false
+    }
+    if (L === O) {
+      return true
+    }
+    L = L.__proto__
   }
 }

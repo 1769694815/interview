@@ -1,7 +1,7 @@
 /*
  * @Author: xwen
  * @Date: 2020-04-17 14:02:08
- * @LastEditTime: 2020-04-17 16:24:04
+ * @LastEditTime: 2020-04-22 16:35:28
  * @LastEditors: xwen
  * @Description: 继承
  */
@@ -87,3 +87,18 @@ console.log(b.age)
 console.log(b.getJob())
 console.log(b.getName())
 console.log(b.getNameAndJob())
+
+function deepCopyTwo(obj) {
+  let objClone = Array.isArray(obj) ? [] : {}
+  if (obj && typeof obj == 'object') {
+    for (const key in obj) {
+      // 判断obj子元素是否为对象，如果是，递归复制
+      if (obj[key] && typeof obj[key] === 'object') {
+        objClone[key] = deepCopyTwo(obj[key])
+      } else {
+        objClone[key] = obj[key]
+      }
+    }
+  }
+  return objClone
+}
